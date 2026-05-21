@@ -1,0 +1,126 @@
+---
+
+---
+
+<section class="Grid_1_1">
+  <div id="Tekst_1">
+    <p id="Kort_tekst">
+      Det er nemt og hurtigt at få Dankort øremærket, det eneste du skal bruge er din telefon eller computer, så du kan logge ind på din bank.
+      Du skal være 18 år for at kunne få Dankort.
+    </p>
+<hr class="devider" />
+  </div>
+
+  <div id="Tekst_2">
+    <p>Step 1:</p>
+
+    <p>Du åbner din bank på enten computer eller mobilen. Her efter går du ind på oversigten. her ligger kort, tryk på den.</p>
+
+    <p>Step 2:</p>
+
+    <p>Her kommer dine kort muligheder op. Du kan vælge Dankort eller Visa/Dankort, det kommer an på din bank om du kan vælge begge eller kun den ene. Her skal du vælge hvad du helst vil have.</p>
+  </div>
+
+  <div id="Pics1">
+    <img class="Iphone" src="/Images1/nr1.webp" alt="Iphone" />
+    <img class="Iphone" src="/Images1/nr2.webp" alt="Iphone" />
+  </div>
+  <div id="Tekst_3">
+    <p>Step 3:</p>
+    <p>Her skal du vælge hvilken konto kortet skal tilknyttes, så altså den konto du har dit nuværende kort til fx. For det meste har man kaldt sine kontoer noget forskelligt. Fx Lønkonto, opsparing eller brugetkonto. Hvis du er i tvivl om hvilken konto du vil have kortet på kan du hurtigt gå ud til dine kontoer og tjekke, så du bestiller til den rigtige konto.</p>
+    <p>Step 4:</p>
+    <p>Til sidst skal du godkende med nemID. Du får en bekræftelse/kvittering når du er helt færdig. Nu skal du bare vente på din bank behandler og godkender dig til kortet, dette tager ikke lang tid, og du får hurtigt svar i din netbank. Hvis du skal have tilsendt fysisk kort, kan det godt tage lidt længere tid, omrking 7 - 10 dage.</p>
+  </div>
+  <div id="Pics2">
+    <img class="Iphone" src="/Images1/nr3.webp" alt="Iphone" />
+    <img class="Iphone" src="/Images1/nr4.webp" alt="Iphone" />
+  </div>
+</section>
+
+<style>
+
+
+    .devider {
+     border: none;
+     border-top: 1px solid #000000;
+     width: 100%;
+     margin: 30px 0;
+    }
+
+    .Grid_1_1{
+        padding: 25px;
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      p{max-width: 650px;
+        font-family: "Raleway", sans-serif;
+          line-height: 1.4;
+    }
+
+    #Kort_tekst{font-weight: 600;}
+
+    #Pics1,
+    #Pics2 {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+    .Iphone {
+    width: 35%;
+    height: auto;
+}
+
+@media screen and (min-width: 900px){
+        .Grid_1_1{
+            padding: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+     #Tekst_1{display: grid;
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    #Tekst_2{display: grid;
+        grid-row: 2;
+        grid-column: 1;
+        padding-bottom: 30px;
+        padding-top: 30px;
+    }
+    #Pics1{display: grid;
+        grid-row: 2;
+        grid-column: 2;
+    }
+
+    #Pics2{display: grid;
+    grid-row: 3;
+    grid-column: 1;
+    }
+
+    #Tekst_3{display: grid;
+        grid-row: 3;
+        grid-column: 2;
+    }
+
+     #Pics1,
+     #Pics2 {
+     display: flex;
+     flex-direction: row;
+     gap: 20px;
+     align-items: flex-start;
+}
+
+    .Iphone {
+     width: 40%;
+     height: auto;
+}
+
+
+    }
+
+</style>

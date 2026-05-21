@@ -1,0 +1,110 @@
+---
+
+---
+
+
+<div id="box">
+    <h2>Hvorfor skal unge gå op i det?</h2>
+    <section class="grid_1_1">
+        <div id="gronboks">
+        <div class="tekt_boks_med_icon">
+            <img class="Iphone" src="/Images1/natur.svg" alt="Natur logo" />
+            <div>
+            <p class="Kort_tekst">Støtter naturen uden ekstra</p>
+            <p>Du behøver ikke ændre din hverdag eller bruge flere penge. Betal som normalt, så går der automatisk donationer til mere dansk natur.</p>
+            </div>
+            </div>
+        <div class="tekt_boks_med_icon">
+            <img class="Iphone" src="/Images1/betalinger.svg" alt="Betalings logo" />
+            <div>
+            <p class="Kort_tekst">Små betalinger gør en stor forskel</p>
+            <p>En betaling virker måske ikke af meget, men når tusindvis af unge bruger Dankort hver dag, bliver det til millioner af kroner til dansk natur.</p>
+            </div>
+        </div>
+        </div>
+        <div id="bloboks">
+        <div class="tekt_boks_med_icon">
+            <img class="Iphone" src="/Images1/støttefremtiden.svg" alt="Støtte frmtiden" />
+            <div>
+            <p class="Kort_tekst">Du støtter din fremtid</p>
+            <p>I en verden med klimaforandringer og usikkerhed er mere dansk natur vigtigere end nogensinde. Når du bruger Dankort Øremærket, er du med til at passe på den fremtid, vi selv skal leve i.</p>
+            </div>
+        </div>
+        <div class="tekt_boks_med_icon">
+            <img class="Iphone" src="/Images1/meretildig.svg" alt="Mere til dig logo" />
+            <div>
+            <p class="Kort_tekst">Mere til dig</p>
+            <p>Dankort er en af de billigste betalingsløsninger i Danmark. Det betyder færre unødige gebyrer og flere penge til det, du faktisk hellere vil bruge dem på.</p>
+            <div>
+        </div>
+        </div>
+        </section>
+</div>
+
+
+
+
+<style>
+    
+    #box{
+        background-color: #EDEDED;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 4px 12px rgba(20, 12, 5, 0.5);
+        margin: 25px;
+    }
+
+    #gronboks{
+        margin: 8px;
+        background-color: #B1E7B1;
+        padding: 10px;
+        border-radius: 20px;
+        }
+
+    #bloboks{
+        margin: 8px;
+        background-color: #CFECF6;
+        padding: 10px;
+        border-radius: 20px;
+        grid-row: 2;
+        grid-column: 1/2;
+    }
+    
+    .grid_1_1{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+   
+    .tekt_boks_med_icon{
+        display: flex;
+        gap: 10px;}
+
+    .Kort_tekst, h2{
+        font-weight: 600;
+        font-family: "Raleway", sans-serif
+    }
+
+    p{
+        font-family: "Raleway", sans-serif;
+        max-width: 600px;
+}
+
+
+
+     @media screen and (min-width: 900px){
+        .grid_1_1{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+          #bloboks{
+            grid-row: 1;
+            grid-column: 2;}
+
+        #box{margin: 35px;}
+
+
+
+     }
+
+</style>
