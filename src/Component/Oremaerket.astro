@@ -1,0 +1,33 @@
+---
+import landskab from "../img/landskab.webp";
+---
+<section>
+<div class="div_tekst"><h2>Hvad betyder øremærket?</h2><p>Dankort Øremærket betyder, at der bliver doneret 1 øre til Den Danske Naturfond, hver gang du betaler med dit Dankort. Og nej pengene bliver ikke trukket fra din konto. Det er Dankort, banker og samarbejdspartnere, der donerer. Du betaler præcis det samme som normalt.
+
+Det handler altså om at gøre noget godt for naturen gennem noget, du allerede gør hver dag, nemlig at betale med dit kort.</p></div>
+<div class="div_img"><img src="/img/landskab.webp" alt="Billede af landskab"></div>
+</section>
+
+<style>
+img {max-width:100%;
+border-radius: 20px;}
+
+.div_img {text-align: center;}
+
+.div_tekst {max-width: 60ch; /* Sørger for der er 60 tegn pr linje = UX design */
+    text-align: left;
+}
+section {padding: 25px;}
+
+/* desktop */
+@media (min-width: 1024px) {
+section {
+    display: flex;
+  justify-content: center;
+   align-items: flex-start; /* Sørger for at teksten starter oversøt i sectonen */}
+
+  .div_img, .div_tekst {padding: 50px;}
+
+
+}
+</style>

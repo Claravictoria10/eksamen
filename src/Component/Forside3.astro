@@ -1,0 +1,39 @@
+<section>
+    <div class="div_img"><img class="img_mennesker" src="/img/mennesker.webp" alt="Billede af glade mennesker i naturen"></div>
+
+    <div class="div_tekst"><h1>Oplev med Dankort Øremærket</h1>
+    <div class="div_flex"><img class="img_dk" src="/img/dk.svg" alt="Billede af Dankorts logo">
+     <p>Små handlinger. <br> Stor betydning.</p></div></div>
+</section>
+
+<style>
+.img_mennesker {max-width: 100%;}
+
+   .div_tekst {position: absolute;
+  top: 65%;
+  left: 35%;
+  transform: translate(-50%, -50%);}
+  
+
+.div_flex
+{display: flex;
+gap: 10px;}
+
+
+section {position: relative;
+}
+
+.img_dk {max-width: 15%;}
+
+h1 {  margin-bottom: 0;}
+
+p,h1 {color: #fff;}
+/* desktop */
+@media (min-width: 1024px) {
+ .div_tekst {
+  top: 75%;
+  left: 20%;
+}
+
+}
+</style>

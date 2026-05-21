@@ -1,0 +1,38 @@
+---
+import landskab from "../img/pige.webp";
+---
+<section>
+<div class="div_img"><img src="/img/pige.webp" alt="Billede af landskab"></div>
+
+<div class="div_tekst"><h2>Verden føles mere usikker ligenu</h2><p>Krige, klimaforandringer og en verden der hele tiden ændrer sig. Mange unge føler i dag, at fremtiden er mere usikker end nogensinde før.
+
+Netop derfor betyder små valg mere, end man tror.
+
+Når du vælger Dankort, støtter du ikke bare naturen, du støtter også noget dansk i en verden fyldt med internationale giganter og usikkerhed. Du er med til at støtte danske virksomheder, et dansk betalingssystem og mere natur i Danmark.
+
+Det handler ikke om at redde verden alene. 
+Det handler om at passe på den verden, vi selv skal leve i.</p>
+</section>
+
+<style>
+img {max-width:100%;
+border-radius: 30px;}
+
+.div_img {text-align: center;}
+
+.div_tekst {max-width: 60ch; /* Sørger for der er 60 tegn pr linje = UX design */
+    text-align: left;
+}
+section {padding: 25px;}
+
+/* desktop */
+@media (min-width: 1024px) {
+section {
+    display: flex;
+  justify-content: center;
+   align-items: flex-start; /* Sørger for at teksten starter oversøt i sectonen */}
+
+  .div_img, .div_tekst {padding: 50px;}
+
+}
+</style>
