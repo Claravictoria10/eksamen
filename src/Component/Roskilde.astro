@@ -1,0 +1,64 @@
+---
+import Button1 from "./Button1.astro"
+---
+
+<section class="grid_1_1">
+    <div>
+        <h1>Vind med Dankort Øremærket</h1>
+        <h2>2x partout billetter til Roskilde Festival 2026</h2>
+        <p>Alt behøver ikke larme for at sige noget. I år er vi til stede på Roskilde – ikke for at skrue op, men for at skrue ned og give plads til et øjebliks stilhed og opladning.</p>
+        <p>I GROW-området finder du et lille rum med ro. Her kan du sætte dig, trække vejret og lytte til den danske natur. Måske minder det dig om noget, du havde glemt. Måske føles det som noget, vi burde passe bedre på.</p>
+        <p>Deltag på vores instagram.</p>
+        <p>Følg os på SoMe</p>
+ 
+    </div>
+    <div>
+        <img class="roskilde" src="/Images1/roskildebillede.webp" alt="fælleskassen" />
+    </div>
+
+</section>
+
+<style>
+    section{padding: 25px;}
+    h1{font-family: "Raleway", sans-serif;
+    text-align: center;
+}
+    h2{font-family: "Raleway", sans-serif;
+        width: 70%;}
+
+    p{font-family: "Raleway", sans-serif;}
+
+    .roskilde{
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+        border-radius: 20px;
+        box-shadow: 0 4px 12px rgba(20, 12, 5, 0.5);
+    }
+
+      @media screen and (min-width: 900px){
+        .grid_1_1{
+        padding: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+        .roskilde{width: 65%;}
+
+        h1{width: 50%;
+            padding-bottom: 30px;
+            margin: 0 auto;
+        }
+
+        h2{width: 50%;
+        padding-bottom: 30px; 
+        }
+
+        p{padding-bottom: 20px;}
+
+
+
+
+      }
+
+
+</style>

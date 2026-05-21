@@ -4,9 +4,243 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<title>Astro</title>
 	</head>
     <body>
-        <header></header>
-        <footer></footer>
+            <header>
+      <div class="logo">
+        <a href="/">
+          <img src="/Images1/dankort.webp" alt="Logo" />
+        </a>
+      </div>
+
+      <nav>
+        <ul class="menu">
+        <li><a href="/information">Information</a></li>
+         <li><a href="/bestilkort">Bestil kort</a></li>
+        </ul>
+
+        <button class="burger" type="button">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+      </nav>
+    </header>
+    <slot/>
+        <footer>
+            <section>
+                <div id="box_1">
+             <div class="logo">
+                 <a href="/">
+                 <img src="/Images1/dankort.webp" alt="Logo" />
+                 </a>
+             </div>
+             <div id="box_grid">
+            <div>
+            <p class="Kort_tekst_2">Dankort</p>
+            <a href="">Om Dankort</a>
+            <a href="">Download logoer</a>
+            </div>
+            <div>
+            <p class="Kort_tekst_2">Support</p>
+            <a href="">Kontakt kundeservice</a>
+            <a href="">Support erhverv</a>
+            <a href="">Support privat</a>
+            </div>
+            <div>
+            <p class="Kort_tekst_2">Politikker</p>
+            <a href="">Privatlivspolitikker</a>
+            <a href="">Cookies</a>
+            <a href="">AEE regulativ</a>
+            </div>
+            </div>
+               </div>
+            </section>
+        </footer>
     </body>
+
+     <script>
+      const burger = document.querySelector(".burger");
+      const nav = document.querySelector("nav");
+
+      if (burger && nav) {
+        burger.addEventListener("click", () => {
+          burger.classList.toggle("active");
+          nav.classList.toggle("active");
+        });
+      }
+    </script>
+
+    <style>
+    * {
+    margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+    }
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ebebeb;
+  font-family: "Raleway", sans-serif;
+}
+
+.logo img {
+  width: 85px;
+  height: 50px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: end;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger .line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333333;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+}
+.burger {
+  display: none;
+}
+
+
+ #box_1{
+  background-color: #EDEDED;
+  padding: 20px;
+  border-radius: 20px;
+    }
+
+    section{padding: 25px;}
+
+
+.Kort_tekst_2{
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+a{
+    color: #333333;
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+}
+
+a:hover{
+    font-weight: 600;
+
+}
+
+footer a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 6px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+    background-color: transparent;
+    border: 0;
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+  }
+
+  nav.active .menu {
+    display: block;
+    background-color: #ebebeb;
+    position: absolute;
+    top: 94px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  nav.active .menu li {
+    margin: 10px 20px;
+  }
+
+  nav.active .menu a {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 900px){
+
+  #box_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 80px;
+    padding-top: 80px;
+
+}
+    .Kort_tekst_2{padding-top: 0;
+
+    }
+}
+</style>
