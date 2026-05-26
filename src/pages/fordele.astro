@@ -1,0 +1,29 @@
+---
+import Detailsfordele from "../Component/Detailsfordele.astro";
+import Pcard from "../Component/Pcard.astro";
+import { getFordeleData } from "../services/fordeleService";
+
+// Henter id fra URL. eks: http://localhost:3000/fordele?id=1
+const id = Number(Astro.url.searchParams.get("id"));
+
+// Kalder fordeleService for at få data
+const data = await getFordeleData();
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Fordele</title>
+</head>
+
+
+<!-- 
+Flytter data fra superbase format/json til javasqript objekt/sprog
+Sikre at kun den valgte fordel bliver vist: fordele.id === id
+-->
+{data.map((fordele: any) => 
+ fordele.id === id && (
+    <Detailsfordele fordel={fordele} />
+  )
+)}
+
+<Pcard fordele={data} />

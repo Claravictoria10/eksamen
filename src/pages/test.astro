@@ -1,13 +1,19 @@
 ---
-import Oremaerket from "../Component/Oremaerket.astro";
-import Usikkerverden from "../Component/Usikkerverden.astro";
-import Forside3 from "../Component/Forside3.astro";
+import Fordele from "../Component/Fordele.astro";
+import Detailsfordele from "../Component/Detailsfordele.astro";
+import Pcard from "../Component/Pcard.astro";
+import { getFordeleData } from "../services/fordeleService";
+
+// Kalder fordeleService for at få data
+const data = await getFordeleData();
 ---
 <head>
   <meta charset="UTF-8" />
   <title>Dankort</title>
 </head>
-<Forside3 />
-<Oremaerket />
 
-<Usikkerverden />
+<Pcard fordele={data} />
+
+
+
+

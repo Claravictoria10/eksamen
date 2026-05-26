@@ -1,0 +1,73 @@
+---
+const { fordele } = Astro.props;
+---
+
+
+<section id="buttons">
+    <h2>Fordelene ved at vælge dankort øremærket</h2>
+<div class="buttons">
+
+  {fordele.map((fordel: any) => (
+
+    <div class="card">
+
+      <a href={`fordele?id=${fordel.id}`}>
+        <img src={fordel.img} alt={fordel.name} />
+      </a>
+
+      <a href={`fordele?id=${fordel.id}`} class="kategori_tekst">
+        {fordel.name}
+      </a>
+
+    </div>
+
+  ))}
+</div>
+</section>
+
+<style>
+  img {
+    border-radius: 30px;
+    width: 80%;
+    display: block;
+    margin: 0 auto; /* Centrer billede horisontalt */
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .kategori_tekst {
+    padding-top: 10px;
+    text-align: center;
+    color: black;
+  }
+
+
+  .buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    justify-items: center;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column; /* Sørger for at elementerne ligger under hinanden i en kolonne */
+    align-items: center;
+  }
+
+  h2 {text-align: center;}
+
+  #buttons {
+  background-color: #EDEDED;
+  padding: 20px;}
+
+  /* desktop */
+  @media (min-width: 1024px) {
+    .buttons {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+  }
+</style>
