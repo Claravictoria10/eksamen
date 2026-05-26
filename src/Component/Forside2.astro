@@ -1,0 +1,108 @@
+---
+---
+
+<section class="hero">
+  <div id="baggrundsbillede">
+    <img class="forsidebillede" src="/Images1/background.webp" alt="Baggrundsbillede" />
+  </div>
+
+  <div id="overskrift">
+    <h1>Hvorfor vælge</h1>
+    <h1 id="dankort">Dankort Øremærket?</h1>
+  </div>
+
+  <div id="tekst">
+    <p>Med Dankort donerer vi 1 øre til den danske natur hver gang du betaler, uden det koster dig ekstra</p>
+  </div>
+
+  <div id="kroner">
+    <img class="kroner-billede" src="/Images1/kroner.svg" alt="Kroner billede" />
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 620px;
+    overflow: hidden;
+  }
+
+  #baggrundsbillede {
+    width: 100%;
+    height: 100%;
+  }
+
+  .forsidebillede {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  #overskrift {
+    ont-family: "Raleway", sans-serif;
+    position: absolute;
+    top: 90px;
+    left: 24px;
+    max-width: 70%;
+  }
+
+    h1 {
+        font-family: "Raleway", sans-serif;
+  }
+
+  #dankort{color: #E21E27;}
+
+  #tekst {
+    position: absolute;
+    top: 230px;
+    left: 24px;
+    right: 24px;
+    max-width: 50%;
+  }
+
+  #tekst p {
+    font-family: "Raleway", sans-serif;
+  }
+
+  #kroner {
+    position: absolute;
+    bottom: 20%;
+    left: 8%;
+  }
+
+  .kroner-billede {
+    width: 60%;
+    display: block;
+  }
+
+  @media (min-width: 900px) {
+    .hero {
+      height: 650px;
+    }
+
+    .forsidebillede {
+      object-position: center;
+    }
+
+    #overskrift {
+      top: 15%;
+      left: 8%;
+      right: auto;
+      max-width: 500px;
+    }
+
+    #tekst {
+      top: 42%;
+      left: 8%;
+      right: auto;
+      max-width: 420px;
+    }
+
+    .kroner-billede {
+    width: 95%;
+  }
+  }
+</style>
