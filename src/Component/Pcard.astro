@@ -1,5 +1,18 @@
 ---
-const { fordele } = Astro.props;
+
+const SUPABASE_URL = "https://fxpijactmaogkzunxsea.supabase.co/rest/v1";
+const SUPABASE_KEY = "sb_publishable_pGpw0KvnLwhCF1yc4PBsjw_260GHBje";
+const FORDELE_ENDPOINT = `${SUPABASE_URL}/fordele?order=id.asc`;
+
+const options = {
+  headers: {
+    apikey: SUPABASE_KEY,
+  },
+}
+
+
+  const data = await fetch(FORDELE_ENDPOINT, options).then((response) => response.json())
+
 ---
 
 
@@ -7,7 +20,7 @@ const { fordele } = Astro.props;
     <h2>Fordelene ved at vælge dankort øremærket</h2>
 <div class="buttons">
 
-  {fordele.map((fordel: any) => (
+  {data.map((fordel: any) => (
 
     <div class="card">
 
