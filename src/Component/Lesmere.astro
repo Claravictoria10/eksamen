@@ -13,7 +13,22 @@ const {
   buttonText = "Læs mere",
   imageUrl = "/img/lesmere.webp"
 } = Astro.props;
+
+import Button1 from './Button1.astro';
 ---
+
+<div class="welcome-container">
+  <div class="welcome-content">
+    <h1>{title}</h1>
+    <p>{description}</p>
+    <Button1 title="læs mere"/>
+  </div>
+  <div class="welcome-image">
+    <img src={imageUrl} alt="Image" />
+  </div>
+</div>
+
+
 
 <style>
   .welcome-container {
@@ -94,14 +109,3 @@ const {
     }
   }
 </style>
-
-<div class="welcome-container">
-  <div class="welcome-content">
-    <h1>{title}</h1>
-    <p>{description}</p>
-    <button>{buttonText}</button>
-  </div>
-  <div class="welcome-image">
-    <img src={imageUrl} alt="Image" />
-  </div>
-</div>
