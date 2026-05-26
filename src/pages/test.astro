@@ -1,19 +1,7 @@
 ---
-import Fordele from "../Component/Fordele.astro";
-import Detailsfordele from "../Component/Detailsfordele.astro";
-import Pcard from "../Component/Pcard.astro";
-import { getFordeleData } from "../services/fordeleService";
 
-// Kalder fordeleService for at få data
-const data = await getFordeleData();
 ---
 <head>
   <meta charset="UTF-8" />
   <title>Dankort</title>
 </head>
-
-<Pcard fordele={data} />
-
-
-
-
