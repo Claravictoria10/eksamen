@@ -5,6 +5,11 @@ import Kort from "../Component/Kort.astro";
 import Faellesskab from "../Component/Faellesskab.astro";
 import Layout from "../Layout/Layout.astro";
 import Pcard from "../Component/Pcard.astro";
+
+import { getFordeleData } from "../services/fordeleService";
+
+//Klader fordele Service for at få data//
+const data= await getFordeleData();
 ---
 
 <Layout>
@@ -12,6 +17,6 @@ import Pcard from "../Component/Pcard.astro";
 <Lesmere/>
 <Kort/>
 <Faellesskab/>
-<Pcard/>
+<Pcard fordele={data}/>
 </Layout>
 

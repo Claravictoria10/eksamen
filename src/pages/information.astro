@@ -4,6 +4,12 @@ import Forside2 from "../Component/Forside2.astro";
 import Oremaerket from "../Component/Oremaerket.astro";
 import Hvorfor from "../Component/Hvorfor.astro";
 import Usikkerverden from "../Component/Usikkerverden.astro";
+import Pcard from "../Component/Pcard.astro";
+
+import { getFordeleData } from "../services/fordeleService";
+
+//Klader fordele Service for at få data//
+const data= await getFordeleData();
 ---
 
 <Layout>
@@ -11,4 +17,5 @@ import Usikkerverden from "../Component/Usikkerverden.astro";
     <Oremaerket/>
     <Hvorfor/>
     <Usikkerverden/>
+    <Pcard fordele={data}/>
 </Layout>

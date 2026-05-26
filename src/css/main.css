@@ -1,0 +1,22 @@
+h2 {
+  font-family: "Raleway", sans-serif;
+}
+h1 {
+  font-family: "Raleway", sans-serif;
+}
+p {
+  font-family: "Raleway", sans-serif;
+}
+ul {
+  font-family: "Raleway", sans-serif;
+}
+a {
+  font-family: "Raleway", sans-serif;
+}
+
+#page {
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #fffdfb;
+  min-height: 100vh;
+}

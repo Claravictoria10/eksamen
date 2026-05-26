@@ -42,8 +42,6 @@ const { fordele } = Astro.props;
     text-align: center;
     color: black;
   }
-
-
   .buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -64,9 +62,11 @@ const { fordele } = Astro.props;
   padding: 20px;}
 
   /* desktop */
-  @media (min-width: 1024px) {
+  @media (min-width: 900px) {
     .buttons {
       grid-template-columns: repeat(4, 1fr);
+        padding-left: 150px;
+        padding-right: 150px;
     }
 
   }

@@ -15,7 +15,8 @@ const {fordel} = Astro.props;
 .hide {display: none;}
 
 img {max-width: 50%;
-  display: none;}
+  display: none;
+  padding-left: 20px;}
 
 div {display: flex;}
 
@@ -30,6 +31,8 @@ article {
   background-color: #EDEDED;
   border-radius: 30px;
   padding: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
   margin: 30px;
   max-width: 500px;
 }
@@ -38,7 +41,7 @@ h2,p {
   color: black;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 900px) {
   article { 
     max-width: 50%;
   }

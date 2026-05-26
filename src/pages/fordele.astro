@@ -2,6 +2,9 @@
 import Detailsfordele from "../Component/Detailsfordele.astro";
 import Pcard from "../Component/Pcard.astro";
 import { getFordeleData } from "../services/fordeleService";
+import Layout from "../Layout/Layout.astro";
+import Forside3 from "../Component/Forside3.astro";
+import Roskilde from "../Component/Roskilde.astro";
 
 // Henter id fra URL. eks: http://localhost:3000/fordele?id=1
 const id = Number(Astro.url.searchParams.get("id"));
@@ -10,12 +13,9 @@ const id = Number(Astro.url.searchParams.get("id"));
 const data = await getFordeleData();
 ---
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Fordele</title>
-</head>
 
-
+<Layout>
+  <Forside3/>
 <!-- 
 Flytter data fra superbase format/json til javasqript objekt/sprog
 Sikre at kun den valgte fordel bliver vist: fordele.id === id
@@ -25,5 +25,7 @@ Sikre at kun den valgte fordel bliver vist: fordele.id === id
     <Detailsfordele fordel={fordele} />
   )
 )}
+<Roskilde/>
 
 <Pcard fordele={data} />
+</Layout>
