@@ -1,3 +1,25 @@
+---
+import Button2 from "./Button2.astro";
+
+
+---
+
+<section class="kort-section">
+  <div class="kort-container">
+    <div class="kort-card">
+      <div class="kort-image">
+        <img src="/img/iphone.webp" alt="Image" />
+      </div>
+      <div class="kort-content">
+        <h1>Bestil dit kort</h1>
+        <h2>Kom i gang med Dankort Øremærket</h2>
+        <p>Vælg et kort, der gør en forskel i hverdagen, og støt et formål, du tror på.</p>
+        <Button2 title="→" href="/bestilkort"/>
+      </div>
+    </div>
+  </div>
+</section>
+
 <style>
   .kort-section {
     background-color: #ffffff;
@@ -54,22 +76,6 @@
     margin-bottom: 20px;
   }
 
-  .kort-content button {
-    background-color: #ffffff;
-    border: none;
-    cursor: pointer;
-    width: 48px;
-    height: 48px;
-    border-radius: 999px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #ff2d2d;
-    font-size: 28px;
-    line-height: 1;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-  }
-
   .kort-content button span {
     transform: translateY(-1px);
   }
@@ -103,21 +109,3 @@
   }
   
 </style>
-
-<section class="kort-section">
-  <div class="kort-container">
-    <div class="kort-card">
-      <div class="kort-image">
-        <img src="/img/iphone.webp" alt="Image" />
-      </div>
-      <div class="kort-content">
-        <h1>Bestil dit kort</h1>
-        <h2>Kom i gang med Dankort Øremærket</h2>
-        <p>Vælg et kort, der gør en forskel i hverdagen, og støt et formål, du tror på.</p>
-        <button>
-          <span aria-hidden="true">→</span>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
