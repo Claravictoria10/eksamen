@@ -1,0 +1,50 @@
+---
+const {fordel} = Astro.props;
+---
+<a href={`/details/${fordel.id}`} class="Pcard" data-type={fordel.Type}>
+<article>
+      <h2>{fordel.name}</h2>
+      <div>
+    <p class="information"> {fordel.information}</p>
+  <img src={fordel.imgdetails} alt={fordel.name}>
+  </div>
+</article>
+</a>
+
+<style>
+.hide {display: none;}
+
+img {max-width: 50%;
+  display: none;}
+
+div {display: flex;}
+
+/* Container til artiklen */
+a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+article {
+  background-color: #EDEDED;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 30px;
+  max-width: 500px;
+}
+
+h2,p {
+  color: black;
+}
+
+@media (min-width: 1024px) {
+  article { 
+    max-width: 50%;
+  }
+  img {
+    display: block;
+  }
+}
+</style>
+
