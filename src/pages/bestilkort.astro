@@ -1,0 +1,39 @@
+---
+import Layout from "../Layout/Layout.astro";
+import Bestilkort1 from "../Component/Bestilkort1.astro";
+import Applepay from "../Component/Applepay.astro";
+import Faellesskab from "../Component/Faellesskab.astro";
+---
+
+
+<Layout>
+
+<h1>Sådan her bestiller du hurtigt og nemt et dankort hos din egen bank</h1>
+<Bestilkort1/>
+<Applepay/>
+<Faellesskab/>
+
+
+
+</Layout>
+
+<style>
+    h1{
+        text-align: center;
+        padding: 15px;
+        font-family: "Raleway", sans-serif;
+        font-weight: 800;
+        margin: 0 auto;   
+    }
+
+
+    @media screen and (min-width: 900px){
+        h1{
+            max-width: 45%;
+    }
+
+
+    }
+
+
+</style>
