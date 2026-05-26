@@ -1,33 +1,15 @@
----
-const heroImage = '/img/herodk.webp';
-const dkLogo = '/Images1/dankort.webp';
-
-interface Props {
-  title?: string;
-  description?: string;
-}
-
-const {
-  title = 'Her kan du finde alt hvad du skal vide om\nDankort Øremærket.',
-  description = 'Små handlinger. Stor betydning.'
-} = Astro.props;
-
-const [titleLine1, ...titleRest] = title.split('\n');
-const titleLine2 = titleRest.join(' ').trim();
----
-
 <section class="forside1" aria-label="Forside hero">
-  <img class="hero-image" src={heroImage} alt="To glade kvinder i bymiljø" />
+  <img class="hero-image" src="/img/herodk.webp" alt="To glade kvinder i bymiljø" />
 
   <div class="overlay-content">
     <h1>
-      <span class="title-line">{titleLine1}</span>
-      {titleLine2 ? <span class="title-line">{titleLine2}</span> : null}
+      <span class="title-line">Her kan du finde alt hvad du skal vide om</span>
+      <span class="title-line">Dankort Øremærket.</span>
     </h1>
 
     <div class="brand-block">
-      <img src={dkLogo} alt="Dankort logo" />
-      <p>{description}</p>
+      <img src="/Images1/dankort.webp" alt="Dankort logo" />
+      <p>Små handlinger. Stor betydning.</p>
     </div>
   </div>
 </section>
