@@ -18,12 +18,11 @@ console.log(data)
 ---
 <article>
   <h2>Fordelene ved at vælge dankort øremærket</h2>
-
-  <div class="buttons">
-    {data.map((fordel) => (
-      <Pcard fordel={fordel} />
-    ))}
-  </div>
+<div class="buttons">
+  {data.map((fordel: any) => (
+    <Pcard fordel={fordel} />
+  ))}
+</div>
 </article>
 
 <style>
