@@ -23,10 +23,6 @@ console.log(data)
 
 <Layout>
   <Forside3/>
-<!-- 
-Flytter data fra superbase format/json til javasqript objekt/sprog
-Sikre at kun den valgte fordel bliver vist: fordele.id === id
--->
 {data.map((fordele: any) => (
     <Detailsfordele fordel={fordele} />
   )
