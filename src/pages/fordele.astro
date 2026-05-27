@@ -1,16 +1,23 @@
 ---
 import Detailsfordele from "../Component/Detailsfordele.astro";
 import Pcard from "../Component/Pcard.astro";
-import { getFordeleData } from "../services/fordeleService";
 import Layout from "../Layout/Layout.astro";
 import Forside3 from "../Component/Forside3.astro";
 import Roskilde from "../Component/Roskilde.astro";
 
-// Henter id fra URL. eks: http://localhost:3000/fordele?id=1
-const id = Number(Astro.url.searchParams.get("id"));
+const endpoint ="https://fxpijactmaogkzunxsea.supabase.co/rest/v1/fordele";
 
-// Kalder fordeleService for at få data
-const data = await getFordeleData();
+//vi laver et opjekt der kan sende flere oplysninger med i fetch//
+const options ={
+    headers:{
+        apikey:"sb_publishable_pGpw0KvnLwhCF1yc4PBsjw_260GHBje", 
+    }
+}
+
+//gå til det her endpoint og så sæt de her options med, når du fetcher//
+const data= await fetch (endpoint, options).then((response) => response.json());
+
+console.log(data)
 ---
 
 
@@ -20,12 +27,10 @@ const data = await getFordeleData();
 Flytter data fra superbase format/json til javasqript objekt/sprog
 Sikre at kun den valgte fordel bliver vist: fordele.id === id
 -->
-{data.map((fordele: any) => 
- fordele.id === id && (
+{data.map((fordele: any) => (
     <Detailsfordele fordel={fordele} />
   )
 )}
 <Roskilde/>
-
-<Pcard fordele={data} />
+<Pcard />
 </Layout>

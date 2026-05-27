@@ -1,22 +1,34 @@
 ---
-const { fordel } = Astro.props;
+import Pcard from "./Pcard.astro";
 
-const imgSrc = fordel.img.startsWith("/")
-  ? fordel.img
-  : "/" + fordel.img;
+const endpoint ="https://fxpijactmaogkzunxsea.supabase.co/rest/v1/fordele";
+
+//vi laver et opjekt der kan sende flere oplysninger med i fetch//
+const options ={
+    headers:{
+        apikey:"sb_publishable_pGpw0KvnLwhCF1yc4PBsjw_260GHBje", 
+    }
+}
+
+//gå til det her endpoint og så sæt de her options med, når du fetcher//
+const data= await fetch (endpoint, options).then((response) => response.json());
+
+console.log(data)
+
 ---
+<article>
+  <h2>Fordelene ved at vælge dankort øremærket</h2>
 
-<a href={`/details/${fordel.id}`} class="button-item">
-  <article>
-    <img src={imgSrc} alt={"Ikon for fordel " + fordel.id} />
-    <p>{fordel.name}</p>
-  </article>
-</a>
-
+  <div class="buttons">
+    {data.map((fordel) => (
+      <Pcard fordel={fordel} />
+    ))}
+  </div>
+</article>
 
 <style>
   img {
-    border-radius: 20px;
+    border-radius: 30px;
     width: 80%;
     display: block;
     margin: 0 auto; /* Centrer billede horisontalt */
