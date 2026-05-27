@@ -1,0 +1,107 @@
+---
+import Layout from '../../Layout/Layout.astro';
+import Forside3 from '../../Component/Forside3.astro';
+import Roskilde from '../../Component/Roskilde.astro';
+import Fordele1 from '../../Component/Fordele1.astro';
+
+export async function getStaticPaths() {
+    const endpoint ="https://fxpijactmaogkzunxsea.supabase.co/rest/v1/fordele";
+
+//vi laver et opjekt der kan sende flere oplysninger med i fetch//
+const options ={
+    headers:{
+        apikey:"sb_publishable_pGpw0KvnLwhCF1yc4PBsjw_260GHBje", 
+    }
+}
+  const response = await fetch(endpoint,options);
+  const data = await response.json();
+
+// Den tager et produkt af gangen indenfor min data og så hiver den id'et ud og gemmer den i astro.props 
+
+  return data.map((fordel) => {
+    return {
+      params: { id: fordel.id.toString() },
+      props: { fordel },
+    };
+  });
+}
+
+const { id } = Astro.params;
+const { fordel } = Astro.props;
+---
+<Layout>
+  <Forside3/>
+  <article>
+    <div id="box">
+      <h1>{fordel.name}</h1>
+      <div id="grid_1_1">
+        <div id="tekst">
+      <p class="information"> {fordel.information}</p>
+      </div>
+      <div id="billede">
+      <img class="pic" src="/img/stotdanskerhverv.webp" alt="Iphone" />
+      </div>
+      </div> 
+    </div>
+  </article>
+<Roskilde/>
+<Fordele1/>
+</Layout>
+
+
+<style>
+  article {
+  padding: 40px;}
+
+  #box{
+     background-color: #EDEDED;
+     padding: 20px;
+     border-radius: 20px;
+     box-shadow: 0 4px 12px rgba(20, 12, 5, 0.5);
+
+    }
+
+ #tekst{}
+
+.pic {
+  width: 70%;
+  height: auto;
+  display: block;
+}
+
+#billede{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 900px){
+#grid_1_1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+#tekst {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+#billede {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.pic {
+  width: 70%;
+  height: auto;
+  display: block;
+}
+
+}
+
+
+
+}
+</style>

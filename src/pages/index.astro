@@ -4,12 +4,22 @@ import Lesmere from "../Component/Lesmere.astro";
 import Kort from "../Component/Kort.astro";
 import Faellesskab from "../Component/Faellesskab.astro";
 import Layout from "../Layout/Layout.astro";
-import Pcard from "../Component/Pcard.astro";
+import Fordele1 from "../Component/Fordele1.astro"
 
-import { getFordeleData } from "../services/fordeleService";
+const endpoint ="https://fxpijactmaogkzunxsea.supabase.co/rest/v1/fordele";
 
-//Klader fordele Service for at få data//
-const data= await getFordeleData();
+//vi laver et opjekt der kan sende flere oplysninger med i fetch//
+const options ={
+    headers:{
+        apikey:"sb_publishable_pGpw0KvnLwhCF1yc4PBsjw_260GHBje", 
+    }
+}
+
+//gå til det her endpoint og så sæt de her options med, når du fetcher//
+const data= await fetch (endpoint, options).then((response) => response.json());
+
+console.log(data)
+
 ---
 
 <Layout>
@@ -17,6 +27,6 @@ const data= await getFordeleData();
 <Lesmere/>
 <Kort/>
 <Faellesskab/>
-<Pcard fordele={data}/>
+<Fordele1/>
 </Layout>
 
