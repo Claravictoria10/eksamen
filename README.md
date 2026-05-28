@@ -17,20 +17,42 @@ Figma: https://www.figma.com/design/wB7AGAaLfj3dQGBnVAVXRl/Eksamen---Semester-2?
 Trello: https://trello.com/invite/b/69f07b285ef831c1f46f9368/ATTI7b25a4a104b42a4f97e76eeda62d23dcC46B7EBB/eksamen-1508
 
 ##Projektstruktur ?????????????
-Projektet er opdelt i HTML, CSS og JavaScript-filer.
+Projektet er opdelt i HTML, CSS og JavaScript.
 
-project/
-├── index.html
-├── recipelist.html
-├── recipedetails.html
-├── form.html
-├── css/
-│ └── style.css
-├── js/
-│ ├── index.js
-│ ├── recipelist.js
-│ ├── recipedetails.js
-│ └── form.js
+Eksamen/
+├── public/
+│ └──
+├── src/
+│ └── Componenter
+│ └── Applepay.astro
+│ └── Bestilkort1.astro
+│ └── Button1.astro
+│ └── Button2.astro
+│ └── Detailsfordele.astro
+│ └── Faellesskab.astro
+│ └── Fordele1.astro
+│ └── Forside1.astro
+│ └── Forside2..astro
+│ └── Forside3.astro
+│ └── Hvorfor.astro
+│ └── Kort.astro
+│ └── Lesmere.astro
+│ └── Oremaerket.astro
+│ └── Pcard.astro
+│ └── Roskilde.astro
+│ └── Tal.astro
+│ └── Usikkerverden.astro
+│ └── css
+│ └── main.css
+│ └── Layout
+│ └── Layout.astro
+│ └── pages
+│ └── details
+│ └── [id].astro
+│ └── bestilkort..astro
+│ └── index.astro
+│ └── information.astro
+├── .gitignore
 └── README.md
 
 ###Filbeskrivelser
@@ -39,7 +61,7 @@ Pages:
 - index.astro – forsiden
 - information.astro – viser en masse information
 - bestil kort.astro – viser en guide til at bestille et kort
-- fordele.astro – viser en detail side omkring en bestemt fordel, samt en konkurrence og events.
+- details/[id].astro – dynamisk detaljeside, der viser en valgt fordel ud fra id
 
 Komponenter:
 
@@ -56,97 +78,83 @@ Komponenter:
 - Pcard.astro – komponent med cards der linker til de forskellige fordele.
 - Detailsfordele.astro – sektion med uddybende information om en bestemt fordel.
 - Roskilde.astro – sektion med Roskilde Festival konkurrence.
-- Events.astro – sektion med carousel og information om events.
 - Button1.astro – genanvendelig button-komponent brugt flere steder på sitet.
 - Button2.astro – genanvendelig button-komponent til at skifte side.
 - applepay.astro - Her vises der hvordan man hurtigt kan få sit kort i Apple Pay.
 - bestilkort.astro - Nem og hurtig guide til hvordan man nemt kan få Dankort øremærket kort.
+- Fordele1.astro - Her ligger komponentet som har Pcardet liggende inde i sig.
 
-File oprettet via brug af Astro:
+Ekstra filer:
 
-- astro.config.mjs – konfiguration af Astro-projektet
-- package.json – indeholder projektets dependencies og scripts
-- README.md – dokumentation og information om projektet
+- README.md – teknisk okumentation om projektet
+- .gitignore – filer og mapper der ikke skal pushes til GitHub
+
+Layout og styling:
+
+- Layout.astro – fælles layout med header/footer og struktur for siderne
+- main.css – global styling for hele sitet
+
+Billeder:
+
+- public/img – mappe med billeder og ikoner
+- public/Images1 – mappe med øvrige billeder
 
 ##Hvordan koden fungerer
-Vi har JavaScript og css stående inde på selve komponentet. Jasvasqript står også på den page hvor et komponent med javasqript bruges.
+Vi har CSS og JavaScript direkte i de komponenter, hvor funktionaliteten bruges. Derudover bruges JavaScript også på de pages, hvor komponenterne bliver hentet ind og dataen skal vises dynamisk.
 
-###index.js ????
-Her skal istedet stå javasqripten
+###js
+Da vi har arbejdet i Astro, har vi ikke haft separate JavaScript-filer. I stedet har vi skrevet vores JavaScript direkte i de komponenter og pages, hvor funktionaliteten blev brugt.
 
-###recipelist.js
-Henter data fra Rest API'et og viser en liste med opskrifter på siden.
-
-###Flow: ????
+###Flow:
 
 Siden loader
 JavaScript kører
-Data hentes fra Rest API
-Data bliver gennemgået med loop
-HTML bliver indsat i DOM'en
-Brugeren kan klikke på en fordel
+Data hentes fra Supabase REST API
+Data gennemgås med loop
+HTML indsættes dynamisk i DOM’en
+Brugeren kan interagere med fordelene
 
-###recipedetails.js ?????
-Bruges til detaljesiden. Den læser et id fra URL'en og henter derefter den rigtige opskrift fra Rest API'et.
-
-Det gør det muligt at genbruge den samme HTML-side til mange opskrifter. I stedet for at lave én side per opskrift, bruger vi ét id i URL'en til at vise det rigtige indhold.
-
-###form.js ????
-Styrer formularen og validering af inputfelter.
-
-Denne fil bruges til at sikre, at brugeren udfylder formularen korrekt. Det gør formularen mere brugervenlig og mindsker fejl.
-
-##Navngivning ?????
+##Navngivning
 Vi har navngivet vores filer, variabler og funktioner så de så tydeligt som muligt er selvforklarende.
 
 ###Eksempler på variabler
-const recipeContainer;
-const recipeId;
-const selectedCategory;
+endpoint – indeholder URL’en til vores Supabase API
+options – indeholder headers og API key til fetch requesten
+data – gemmer den hentede data fra databasen
 
-###Eksempler på funktioner ????
-fetchRecipes();
-showRecipes();
-showRecipeDetails();
-validateForm();
-Vi har brugt camelCase i JavaScript, fordi det gør koden mere ensartet og lettere at læse.
+###Eksempler på funktioner
+fetch() – henter data fra vores Supabase API
+response.json() – omdanner dataen til JSON objekter
+headers – sender API key med i fetch requesten
+await – venter på at dataen bliver hentet færdigt
 
-##Kommentarer i koden ?????
-Vi har kommenteret de steder i koden, hvor det giver mening. Fx ved funktioner, fetch-kald og steder hvor der sker DOM-manipulation.
+##Kommentarer i koden
+Vi har primært kommenteret de steder i koden, hvor funktionaliteten var mere kompleks, særligt i JavaScript. Formålet var at gøre det lettere at forstå hinandens kode uden at gøre koden unødvendigt rodet.
 
-###Eksempel:?????
+###Eksempel:
 
-// Henter opskrifter fra Rest API'et
-async function fetchRecipes() {
-const res = await fetch(apiURL);
-const data = await res.json();
-return data.recipes;
-}
-Vi har prøvet ikke at skrive kommentarer til helt åbenlyse ting, men kun dér hvor det hjælper forståelsen.
+//gå til det her endpoint og så sæt de her options med, når du fetcher//
+const data= await fetch (endpoint, options).then((response) => response.json());
 
-##Data og JSON-struktur ?????
-Vi henter data fra et API i JSON-format.
+##Data og JSON-struktur
+Vi henter data dynamisk fra vores Supabase database gennem et REST API i JSON-format.
 
-###Et objekt kan fx se sådan ud: ?????
+###Et objekt kan fx se sådan ud:
 
 {
 "id": 1,
-"title": "Opskriftsnavn",
-"description": "Kort beskrivelse",
-"category": "dessert",
-"cookTime": 45,
-"servings": 4,
-"thumbnail": "billede.jpg"
+"img": "img/sikkerhed.svg",
+"name": "Sikkerhed",
+"information": "Dankort hjælper med at beskytte dine penge",
+"imgdetails": "img/sikkerhed.webp"
 }
 
-###Felter vi bruger ?????
-id – bruges til at sende brugeren videre til detaljesiden
-title – opskriftsnavn
-description – beskrivelse af opskriften
-category – opskriftkategori (fx dessert, hovedret, forret)
-cookTime – tilberedningstid i minutter
-servings – antal portioner
-thumbnail – opskriftsbillede
+###Felter vi bruger
+id – bruges til at identificere objektet
+img - ikon/billede til cardet
+name - navnet på fordelen
+information - beskrivelse af fordelen
+imgdetails - billede brugt på detaljesiden
 
 ##Git og branches
 Vi har brugt GitHub og arbejdet i branches ud fra main for at kunne kode samtidig uden konflikter. Branches blev navngivet efter feature og navn, så det var tydeligt, hvem der havde arbejdet på hvad.
@@ -170,18 +178,20 @@ Vi har arbejdet med bæredygtighed ved at optimere alle billeder til WebP format
 ##Udfordringer undervejs
 Vi oplevede udfordringer med at hente og vise data korrekt fra Rest API’et. Derudover var det en udfordring at tilpasse tidligere kodeeksempler til vores eget projekt og skabe en overskuelig struktur i håndteringen af data fra Supabase.
 
-###Løsninger: ??????
+###Løsninger:
 
-Console.logge data undervejs
-Teste fetch-kald separat
-Bruge URLSearchParams
+Console.log data undervejs
 Dele opgaverne mere tydeligt i gruppen
+Lavet validering på arbejdet
 
-##Mulige forbedringer ??????
+##Mulige forbedringer
 Hvis vi skulle arbejde videre med projektet, kunne vi forbedre det ved at tilføje:
 
+- Dynamiske donationstal med JavaScript
+- Karussellen fra prototypen
+
 ###Gruppemedlemmer
-Clara Storkfelt
-Caroline Poder
-Allysa Navarro
-Isabella Larsen
+Clara Victoria Muxoll Storkfelt
+Caroline Værn Poder
+Allysa Pearl Lingatong Navarro
+Isabella Clara Larsen
