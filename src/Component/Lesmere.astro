@@ -2,93 +2,52 @@
 import Button1 from "./Button1.astro";
 ---
 
-<style>
-  .welcome-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-  }
-
-  .welcome-content {
-    flex: 1;
-    padding-right: 20px;
-  }
-
-  .welcome-content h1 {
-    font-size: 35px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-
-  .welcome-content p {
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 20px;
-  }
-
-  .welcome-content button {
-    background-color: #B2F5EA;
-    color: black;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .welcome-image {
-    flex: 0 0 38%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .welcome-image img {
-    width: 100%;
-    max-width: 340px;
-    border-radius: 10px;
-  }
-
-  @media (max-width: 900px) {
-    .welcome-container {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 16px;
-    }
-
-    .welcome-content {
-      display: contents;
-      padding-right: 0;
-    }
-
-    .welcome-content h1 {
-      order: 1;
-      margin-bottom: 0;
-    }
-
-    .welcome-image {
-      order: 2;
-      flex: none;
-    }
-
-    .welcome-content p {
-      order: 3;
-      margin-bottom: 0;
-    }
-
-    .welcome-content button {
-      order: 4;
-      width: fit-content;
-    }
-  }
-</style>
-
 <div class="welcome-container">
   <div class="welcome-content">
-    <h1>Læs mere om Dankort Øremærket</h1>
-    <p>Se hvordan dine betalinger med Dankort kan støtte danske foreninger, fællesskaber og lokale initiativer.</p>
-    <Button1 title="Læs mere" href="/information"/>
+    <h1>Gør dit kort meningsfuldt på under 2 minutter.</h1>
+    <p>Øremærket giver dig mulighed for at støtte naturen, hver gang du betaler med dit Dankort - uden ekstra omkostninger og uden besvær. Øremærket sikrer, at din støtte går direkte til specifikke, lokale naturprojekter, men du fortsætter med at bruge dit kort som sædvanligt. </p>
+    <Button1 class="button" title="Læs mere" href="/information"/>
   </div>
   <div class="welcome-image">
     <img src="/img/lesmere.webp" alt="Image" />
   </div>
 </div>
+
+<style>
+  .welcome-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+    .welcome-image {
+    justify-content: center;  
+    padding: 20px;
+    display: flex;
+  }
+
+  .welcome-image img{
+    width: 50%;
+    border-radius: 20px;
+
+  }
+
+  @media (min-width: 900px){
+    .welcome-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center; /* får teksten til at line op med midten af billedet */
+      padding: 20px;
+  }
+    .welcome-image img{
+    width: 40%;
+    border-radius: 20px;
+  }
+
+  .welcome-content{
+    grid-row: 1;
+    grid-column: 1;
+    padding-left: 230px;
+  }
+
+  }
+</style>

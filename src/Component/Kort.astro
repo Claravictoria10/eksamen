@@ -1,7 +1,6 @@
 ---
 import Button2 from "./Button2.astro";
-
-
+const { title, href, ...props } = Astro.props;
 ---
 
 <section class="kort-section">
@@ -11,27 +10,79 @@ import Button2 from "./Button2.astro";
         <img src="/img/iphone.webp" alt="Image" />
       </div>
       <div class="kort-content">
-        <h1>Bestil dit kort</h1>
-        <h2>Kom i gang med Dankort Øremærket</h2>
-        <p>Vælg et kort, der gør en forskel i hverdagen, og støt et formål, du tror på.</p>
-        <Button2 title="→" href="/bestilkort"/>
+        <h2>Gratis og uden ændringer i din daglige brug.</h2>
+        <p>Tilmeldingen tager under 2 minutter, er helt gratis og kræver ingen ændringer i din daglige rutine. Det er en nem og hurtig proces, der sikrer, at du kan fortsætte med at bruge tjenesten uden besvær.</p>
+        <Button2 id="button" title="→" href="/bestilkort"/>
       </div>
     </div>
   </div>
 </section>
 
+
+
+<style>
+.kort-card {
+  background-color: #EDEDED;
+  border-radius: 20px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.kort-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kort-image img {
+  width: 60%;
+  height: auto;
+  display: block;
+}
+section{padding: 20px;}
+
+@media (min-width: 900px) {
+  .kort-image img {
+  width: 35%;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+section{padding: 120px;}
+
+.kort-content{width: 70%;}
+
+
+
+
+
+
+}
+
+
+
+
+
+</style>
+
+
+
+
+
+<!-- 
 <style>
   .kort-section {
     background-color: #ffffff;
-    padding: 28px 20px;
+    
   }
 
   .kort-container {
-    background-color: #dcdcdc;
     border-radius: 26px;
-    padding: 36px 42px;
-    max-width: 1120px;
+    max-width: 85%;
     margin: 0 auto;
+    background-color: #dcdcdc;
   }
 
   .kort-card {
@@ -42,38 +93,17 @@ import Button2 from "./Button2.astro";
   }
 
   .kort-image {
-    flex: 0 0 32%;
     display: flex;
     justify-content: center;
   }
 
   .kort-image img {
-    width: 100%;
-    max-width: 220px;
+    width: 50%;
     border-radius: 10px;
   }
 
   .kort-content {
     flex: 1;
-    padding-left: 20px;
-  }
-
-  .kort-content h1 {
-    font-size: 35px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-
-  .kort-content h2 {
-    font-size: 25px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-
-  .kort-content p {
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 20px;
   }
 
   .kort-content button span {
@@ -86,26 +116,5 @@ import Button2 from "./Button2.astro";
     }
   }
 
-  @media (max-width: 1023px) {
-    .kort-container {
-      padding: 24px;
-      border-radius: 18px;
-    }
-
-    .kort-card {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .kort-image {
-      flex: none;
-      width: 100%;
-      justify-content: flex-start;
-    }
-
-    .kort-content {
-      padding-left: 0;
-    }
-  }
-  
 </style>
+-->
