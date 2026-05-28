@@ -10,12 +10,6 @@ Sitet består af flere sider, hvor brugeren kan:
 - Se en guide i forbindelse med bestilling af kort.
 - Udforske fordele, events og samarbejdspartnere.
 
-###Links
-GitHub repository: https://github.com/Claravictoria10/eksamen.git
-GitHub Pages: [indsæt link]
-Figma: https://www.figma.com/design/wB7AGAaLfj3dQGBnVAVXRl/Eksamen---Semester-2?node-id=147-258&t=7QU7FnqTy6FxkWXo-1
-Trello: https://trello.com/invite/b/69f07b285ef831c1f46f9368/ATTI7b25a4a104b42a4f97e76eeda62d23dcC46B7EBB/eksamen-1508
-
 ##Projektstruktur ?????????????
 Projektet er opdelt i HTML, CSS og JavaScript.
 
