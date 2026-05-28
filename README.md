@@ -10,7 +10,7 @@ Sitet består af flere sider, hvor brugeren kan:
 - Se en guide i forbindelse med bestilling af kort.
 - Udforske fordele, events og samarbejdspartnere.
 
-##Projektstruktur ?????????????
+##Projektstruktur
 Projektet er opdelt i HTML, CSS og JavaScript.
 
 Eksamen/
