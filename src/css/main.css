@@ -5,19 +5,41 @@ h1 {
 
 h2 {
   font-family: "Raleway", sans-serif;
+  font-size: 20px;
 }
 p {
   font-family: "Raleway", sans-serif;
+  font-size: 15px;
 }
 ul {
   font-family: "Raleway", sans-serif;
+  font-size: 15px;
 }
 a {
   font-family: "Raleway", sans-serif;
+  font-size: 15px;
 }
 
-#page {
-  max-width: 1400px;
-  margin: 0 auto;
-  min-height: 100vh;
+@media (min-width: 900px) {
+  h1 {
+    font-family: "Raleway", sans-serif;
+    font-size: 45px;
+  }
+
+  h2 {
+    font-family: "Raleway", sans-serif;
+    font-size: 25px;
+  }
+  p {
+    font-family: "Raleway", sans-serif;
+    font-size: 17px;
+  }
+  ul {
+    font-family: "Raleway", sans-serif;
+    font-size: 17px;
+  }
+  a {
+    font-family: "Raleway", sans-serif;
+    font-size: 17px;
+  }
 }
