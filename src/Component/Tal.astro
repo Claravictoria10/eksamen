@@ -1,0 +1,65 @@
+<section>
+    <div class="box">
+    <h2>2026</h2>
+    <p class="p_1">Estimeret donation indtil videre</p>
+      <p class="tal1">1.056.000 kr</p>
+      <div class="boxe">
+    <div>
+        <p>Det svarer til</p>
+        <p class="tal2">2.500</p>
+          <p>festivalbilletter</p>
+    </div>
+     <div>
+        <p>Eller</p>
+        <p class="tal2">12.400</p>
+        <p>kopper cafékaffe</p>
+     </div>
+      <div>
+         <p>Eller</p>
+        <p class="tal2"> 44.000</p>
+        <p>ture med offentlig transport</p>
+      </div>
+      </div>
+      </div>
+</section>
+
+<style>
+.box {background-color: #CFECF6;
+border-radius: 20px;
+}
+
+.boxe { display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    background-color: transparent;
+}
+
+section {padding: 20px;}
+
+div {
+background-color: white;
+border-radius: 20px;
+padding: 30px;
+}
+
+p, h1, .p_1, .tal1, .tal2 {  margin: 2%;}
+
+h1, {font-size: 15px;}
+
+.p_1 {font-size: 20px;}
+
+.tal1 {font-size: 38px;}
+
+.tal2 {font-size: 28px;}
+
+
+/* desktop */
+@media (min-width: 900px) {
+.boxe {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.box {margin: 80px;
+margin-top: 0;
+margin-bottom: 0;}
+}
+</style>
